@@ -1,0 +1,47 @@
+AGENDA
+pengenalan jenkins pipeline
+membuat pipeline
+stages
+agent
+steps
+plugin
+multi branch
+dan lain-lain
+
+PENGENALAN JENKINS PIPELINE
+jenkins pipeline merupakan plugin yang mendukung implementasi pembuatan continiuos delivery pipeline di jenkins
+continuous delivery pipeline adalah perintah-perintah yang dibuat agar software yang kita buat bisa dideliver ke pengguna dari mulai version control sampai deployment
+pipeline menyediakan peralatan untuk mempermudah proses tersebut dari yang paling sederhana sampai yang kompleks menggunakan sintaks DSL(Domain Spesific Language)
+jenkins pipeline menggunakan bahasas pemrograman groovy sebagai DSL nya namun jangan khawatir karena penggunaannya sangat mudah.
+
+KENAPA PIPELINE
+karena pipeline dibuat menggunakan kode, maka kita bisa dengan mudah mengubah atau me review tahapan pipeline
+karena pipeline biasanya dibuat dalam file dan disimpan di projectnya, maka kita tidak perlu takut hilang ketika terjadi restart atau kerusakan di jenkins nya
+kita bisa memasukkan logic yang sederhana sampai kompleks di pipeline, seperti pengecekkan kondisi perulangan dan lain-lain
+
+MENGINSTALL PIPELINE PLUGIN
+saat kita menginstall jenkins secara default tidak ada jenkins pipeline
+perlu install plugin pipeline terlebih dahulu
+https://plugins.jenkins.io/workflow-aggregator/
+
+PIPELINE CONCEPT
+sebelum membuat pipeline ada konsep2 yang perlu dimengerti terlebih dahulu
+jenkins pipeline memiliki konsep yang perlu kita mengerti agar tidak bingung nanti kita menggunakan jenkins pipeline
+
+PIPELINE
+pipeline adalah definisi kode continuous delivery
+sebuah pipeline berisikan intruksi kode perintah untuk proses continuous delivery misal seperti compile testing deploy dan lain lain
+kode pipeline menggunakan kata kunci pipeline
+
+AGENT
+agent adalah machine/server bagian dari jenkins yang digunakan untuk mengeksekusi pipeline
+kode penentuan agent menggunakan kata kunci agent
+agen disebutkan di dalam kode pipeline yang kita buat
+
+STAGE
+stage adalah blok definisi tugas atau tahapan dalam pipeline, misalnya "BUILD", "TEST", "DEPLOY" dan lain lain
+stage biasanya ditampilkan di jenkins seperti tahapan progres dari pipeline
+biasanya dalam pipelie akan terdapat banyak stage
+stage menggunakan kata kunci stage
+
+ 

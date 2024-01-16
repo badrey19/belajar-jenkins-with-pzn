@@ -1,3 +1,36 @@
+--SEBELUM AUTOMATION SERVER--
+
+# Dalam pengembangan perangkat lunak, koding hanyalah tahapan awal saja
+# Setelah koding, masih banyak yang biasanya dilakukan oleh pengembang perangkat lunak sebelum aplikasi yang dibauat sampai ke production server
+# Sebelum adanya Automation Server, biasanya semuanya dilakukan secara manual, namun resikonya adalah sering terjadi kesalahan dan tidak konsisten 
+# Contoh menjalankan unit test, download depedency aplikasi, setup database, membuat distribusi aplikasi dan lain-lain
+# Hal-hal sangat kompleks jika harus dilakukan secara manual terus menerus 
+
+-- PENGENALAN AUTOMATION SERVER --
+
+# Automation Server adalah aplikasi yang bisa digunakan untuk melakukan otomatisasi perintah yang kita instruksikan
+# ada banyak sekali keuntungan yang kita dapatkan jika menggunakan Autoation Server dibanding manual dalam tahapan pengembangan perangkat lunak
+# Automation Server mempercepat proses, karena kita tidak perlu menunggu di Laptop kita 
+# Automation Server bisa berjalan konsisten, di laptop programmer mungkin perangkat lunak bisa berbeda - berbeda
+# Autoation Server bisa berjalan secara otomatis, bisa memberitahu kita ketika terjadi kesalahan dan lain-lain.
+
+== CONTOH AUTOMATION SERVER ==
+jenkins, jetbrains, gitlab ci/cd, github action, atlassian bamboo, circle ci, travis ci dll
+
+
+$$ PENGENALAN JENKINS $$
+
+-- Jenkins adalah Open Source Automation Server yang paling populer saat ini 
+-- Sebelum Jenkins, awalnya project ini bernama Hudson
+-- Hudson dibuat menggunakan Java, dan pengembang inti dari Hudson kebanyakan bekerja di Sun Microsystem (pemilik Java)
+-- Tahun 2011, terjadi sengketa setelah pembelian Sun Microsystem oleh Oracle, dan karena baru bernama Jenkins dari source code Hudson
+-- Hudson sendiri akhirnya didonasikan ke Eclipse Foundation tahun 2012 dan akhirnya pengembangannya berhenti tahun 2017 
+-- https://jenkins.io
+
+== JENKINS PLUGIN ==
+- Jenkins sendiri merupakan sebuah platform untuk Automation Server
+- Kebanyakan fitur jenkins sendiri tersedia dalam bentuk plugin, bahkan kita bisa membuat plugin sendiri jika kita mau 
+- https://plugins.jenkins.io
 PENGENALAN JENKINS PIPELINE
 
 Jenkins Pipeline merupakan plugin yang mendukung pembuatan continous delivery pipeline di Jenkins
@@ -22,3 +55,42 @@ https://plugins.jenkins.io/workflow-aggregator/
 PIPELINE CONCEPT
 
 sebelum membuat pipeline, ada konsep-konsep yang pelru dimengerti terlebih dahulu
+jenkins pipeline memiliki beberapa konsep yang perlu dimengerti, agar tak bingung
+
+PIPELINE
+
+pipeline adalah definisi kode continuous delivery
+sebuah pipeline berisi seluruh instruksi kode perintah untuk proses continuous delivery, seperti compile, testing, deploy dll
+kode pipeline menggunakan kata kunci pipeline
+
+AGENT
+
+agent adalah machine/server/node bagian dari jenkins untuk mengeksekusi pipeline
+kode penentuan Agent menggunakan kata kunci agent
+Agent disebutkan di dalam kode pipeline yang dibuat
+
+STAGE
+
+stage adalah blok definisi tugas atau tahapan dalam pipeline, misalnya "Build", "Test", "Deploy", dan lain-lain
+Stage biasanya ditampilkan di jenkins seperti tahapan progress dari pipeline
+Biasanya dalam pipeline akan terdapat banyak stage
+Stage menggunakan kata kunci stage
+
+STEP
+
+step adalah sebuah intruksi atau perintah
+step pada dasarnya adalah perintah atau intruksi apa yang harus dilakukan oleh jenkins
+sebelumnya pada materi jenkins dasar, pernah membuat step seperti perintah untuk melakukan kompilasi project, menjalankan unit test dll
+step dilakukan di dalam stage
+step mengguanakan kata kunci steps 
+
+PIPELINE JOB
+
+cukup buat job baru, dan pilih pipeline
+
+JENKINSFILE
+
+walau bisa membuat kode pipeline di jenkins job, tapi pada nyatanya biasanya akan membuat kode pipeline di file JENKINSFILE
+file jenkinsfile tsb biasanya disimpan di repository project kita
+
+
